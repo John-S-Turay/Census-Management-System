@@ -1,0 +1,75 @@
+/* Apply box-sizing border-box to all elements for consistent sizing */
+* {
+  box-sizing: border-box;
+}
+
+/* Set the background color and font weight for the body */
+body {
+  font-weight: 400;
+  background-color: #EEEFF4;
+}
+
+/* Ensure full height and width for these elements */
+body,
+html,
+.App,
+.vertical-center {
+  width: 100%;
+  height: 100%;
+}
+
+/* Style the navbar with a specific background color */
+.navbar {
+  background: #1833FF !important;
+  width: 100%;
+}
+
+/* Style outline primary button with a border and text color */
+.btn-outline-primary {
+  border-color: #1833FF;
+  color: #1833FF;
+}
+
+/* Change button background and text color on hover */
+.btn-outline-primary:hover {
+  background-color: #1833FF;
+  color: #ffffff;
+}
+
+/* Center the content vertically with flexbox */
+.vertical-center {
+  display: flex;
+  text-align: left;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* Style the inner block with specific dimensions, background, shadow, padding, and border radius */
+.inner-block {
+  width: 450px;
+  margin: auto;
+  background: #ffffff;
+  box-shadow: 0 14px 80px rgba(34, 35, 58, 0.2);
+  padding: 40px 55px 45px 55px;
+  transition: all 0.3s;
+  border-radius: 20px;
+}
+
+/* Style the form control elements on focus */
+.vertical-center .form-control:focus {
+  border-color: #2554FF;
+  box-shadow: none;
+}
+
+/* Center the heading and add some padding below */
+.vertical-center h3 {
+  text-align: center;
+  margin: 0;
+  line-height: 1;
+  padding-bottom: 20px;
+}
+
+/* Increase the font weight for labels */
+label {
+  font-weight: 500;
+}
