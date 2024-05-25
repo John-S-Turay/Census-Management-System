@@ -22,20 +22,20 @@
                 <form action="" method="post">
                     <h3>Login</h3>
 
-                    <?php echo $accountNotExistErr; ?>
-                    <?php echo $emailPwdErr; ?>
-                    <?php echo $verificationRequiredErr; ?>
-                    <?php echo $email_empty_err; ?>
-                    <?php echo $pass_empty_err; ?>
+                    <?= isset($accountNotExistErr) ? $accountNotExistErr : ''; ?>
+                    <?= isset($emailPwdErr) ? $emailPwdErr : ''; ?>
+                    <?= isset($verificationRequiredErr) ? $verificationRequiredErr : ''; ?>
+                    <?= isset($email_empty_err) ? $email_empty_err : ''; ?>
+                    <?= isset($pass_empty_err) ? $pass_empty_err : ''; ?>
 
                     <div class="form-group">
                         <label for="email_signin">Email</label>
-                        <input type="email" class="form-control" name="email_signin" id="email_signin" />
+                        <input type="email" class="form-control" name="email_signin" id="email_signin" required />
                     </div>
 
                     <div class="form-group">
                         <label for="password_signin">Password</label>
-                        <input type="password" class="form-control" name="password_signin" id="password_signin" />
+                        <input type="password" class="form-control" name="password_signin" id="password_signin" required />
                     </div>
 
                     <button type="submit" name="login" id="sign_in" class="btn btn-outline-primary btn-lg btn-block">Sign in</button>
@@ -46,6 +46,6 @@
 
     <!-- jQuery + Bootstrap JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
