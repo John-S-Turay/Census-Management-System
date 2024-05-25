@@ -14,11 +14,14 @@
      */
     function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
     {
-        // Check if magic quotes are enabled
-        if (function_exists('get_magic_quotes_gpc') && get_magic_quotes_gpc()) {
+        // Check if magic quotes are enabled for GPC (Get/Post/Cookie)
+        $magicQuotesEnabled = function_exists('get_magic_quotes_gpc') ? get_magic_quotes_gpc() : false;
+
+        // If magic quotes are enabled, strip slashes from the value
+        if ($magicQuotesEnabled && is_string($theValue)) {
             $theValue = stripslashes($theValue);
         }
-
+        
         // Switch case based on data type
         switch ($theType) {
             case "text":
@@ -85,3 +88,41 @@
         exit;
     }
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assets</title>
+    <style>
+        .style1 {
+            font-size: 36px;
+        }
+        body {
+            background-color: skyblue;
+        }
+    </style>
+</head>
+<body>
+    <form name="form1" method="post" action="">
+        <p align="center" class="style1"><strong>Republic of Sierra Leone</strong></p>
+        <p align="center" class="style1"><strong>Population and Housing Census</strong></p>
+        <p align="center" class="style1"><strong>Please Fill in the Household Assets Form:</strong></p>
+    </form>
+    <form method="post" name="form2" action="<?php echo htmlspecialchars($editFormAction); ?>">
+        <table align="center">
+            <tr valign="baseline">
+                <td nowrap align="right">Radio:</td>
+                <td><input type="text" name="Radio" value="" size="32"></td>
+            </tr>
+            <!-- Other form inputs go here -->
+            <tr valign="baseline">
+                <td nowrap align="right">&nbsp;</td>
+                <td><input type="submit" value="Insert record">
+                <input type="reset" name="Reset" value="Reset"></td>
+            </tr>
+        </table>
+        <input type="hidden" name="MM_insert" value="form2">
+    </form>
+    <p>&nbsp;</p>
